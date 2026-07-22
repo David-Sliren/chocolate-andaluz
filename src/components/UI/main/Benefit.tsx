@@ -60,8 +60,8 @@ export const Benefit = () => {
           <div className="h-px w-12 md:w-16 bg-forest-green/30"></div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 place-items-center">
-          {benefits.map((item) => (
-            <BenefitIcon icon={item?.tag} text={item.target} />
+          {benefits.map((item, i) => (
+            <BenefitIcon key={i} icon={item?.tag} text={item.target} />
           ))}
         </div>
       </div>
