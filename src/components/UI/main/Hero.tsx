@@ -1,5 +1,5 @@
 import { CallToActionButton } from "../buttons/CallToActionButton";
-import andaluz from "../../../assets/data-person/andaluz.webp";
+import andaluz from "../../../assets/carrusel-data/andaluz.webp";
 
 export const Hero = () => {
   return (
