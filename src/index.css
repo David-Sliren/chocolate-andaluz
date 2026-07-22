@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+:root {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-forest-green) white;
+}
+
+@container scroll-state(stuck: top) {
+  .container-nav {
+    @apply md:max-w-[60rem] md:rounded-full md:relative md:top-4;
+  }
+}
+
+@theme {
+  /* Colores */
+  --color-forest-green: #13402e;
+  --color-mint-green: #8bd9ad;
+  --color-dark-green: #0f3325;
+  --color-light-bg: #f4f9f6;
+  --color-cholate: #853c1c;
+
+  /* Tipografías */
+  --font-noto: "Noto Serif", serif;
+  --font-vietnam: "Be Vietnam Pro", sans-serif;
+
+  /* Espaciado / Tamaños personalizados */
+  --max-width-container: 1200px;
+  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-section: 5rem;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1.5rem;
+  --spacing-stack-lg: 3rem;
+
+  /* Bordes redondeados */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}

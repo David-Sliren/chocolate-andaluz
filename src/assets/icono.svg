@@ -1,0 +1,108 @@
+<svg id="cacao-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 200" width="100%" height="100%" class="select-none" style="--color-primary: #123d2b; --color-body: #2b6e4e; --color-mint: #8ecfa7; --color-seed: #e3ecb0;">
+                            <defs>
+                                <style>
+                                    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Montserrat:wght@900&amp;display=swap');
+                                    
+                                    .svg-title-text {
+                                        font-family: 'Dancing Script', 'Caveat', cursive;
+                                        font-size: 68px;
+                                        font-weight: 700;
+                                        transition: fill 0.3s ease;
+                                    }
+                                    .svg-subtitle-text {
+                                        font-family: 'Montserrat', sans-serif;
+                                        font-size: 32px;
+                                        font-weight: 900;
+                                        letter-spacing: 3.5px;
+                                        transition: fill 0.3s ease;
+                                    }
+                                </style>
+                                
+                                <!-- Soft shadow filter for cocoa pod -->
+                                <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+                                    <feDropShadow dx="1" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.12"></feDropShadow>
+                                </filter>
+
+                                <!-- Leaf / Pod Gradients -->
+                                <linearGradient id="podMainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#123d2b"></stop>
+                                    <stop offset="60%" stop-color="#2b6e4e"></stop>
+                                    <stop offset="100%" stop-color="#123d2b"></stop>
+                                </linearGradient>
+
+                                <linearGradient id="seedFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#e3ecb0"></stop>
+                                    <stop offset="100%" stop-color="#cad68a"></stop>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- ========================================== -->
+                            <!-- LEFT ICON: CACAO POD / MAZORCA DE CACAO    -->
+                            <!-- ========================================== -->
+                            <g transform="translate(15, 10)" filter="url(#softShadow)">
+                                
+                                <!-- RADIATING MINT / GREEN RIPPLES (RIGHT SIDE ECHO ARCS) -->
+                                <g id="cacao-ripples" fill="none" stroke="#8ecfa7" stroke-linecap="round">
+                                    <!-- Inner Arc 1 -->
+                                    <path d="M 105 52 A 52 68 0 0 1 106 138" stroke-width="4.5" opacity="0.95"></path>
+                                    <!-- Arc 2 -->
+                                    <path d="M 115 45 A 62 78 0 0 1 116 145" stroke-width="4" opacity="0.8"></path>
+                                    <!-- Arc 3 -->
+                                    <path d="M 125 38 A 72 88 0 0 1 126 152" stroke-width="3.5" opacity="0.65"></path>
+                                    <!-- Outer Arc 4 -->
+                                    <path d="M 135 32 A 82 98 0 0 1 136 158" stroke-width="3" opacity="0.45"></path>
+                                    <!-- Outermost Arc 5 -->
+                                    <path d="M 144 28 A 90 106 0 0 1 145 162" stroke-width="2.5" opacity="0.25"></path>
+                                </g>
+
+                                <!-- POD STEM (TALLO SUPERIOR) -->
+                                <path d="M 82 42 C 86 32, 94 22, 102 16 C 105 14, 101 10, 97 12 C 90 18, 83 28, 78 38 Z" fill="#123d2b" stroke="#123d2b" stroke-width="1.5" stroke-linejoin="round"></path>
+
+                                <!-- OUTER POD MAIN BODY (Cáscara exterior) -->
+                                <path id="pod-outer-shell" d="M 82 40 
+                                         C 42 62, 22 108, 48 152 
+                                         C 60 172, 75 178, 86 168 
+                                         C 96 158, 104 128, 98 98 
+                                         C 94 75, 88 52, 82 40 Z" fill="url(#podMainGrad)" stroke="#123d2b" stroke-width="3.5" stroke-linejoin="round"></path>
+
+                                <!-- INNER POD RIB 1 (LEFT CURVED RIDGE) -->
+                                <path d="M 80 43 C 48 68, 35 110, 56 152 C 62 163, 72 167, 78 162 C 58 128, 62 82, 80 43 Z" fill="#123d2b" opacity="0.3"></path>
+
+                                <!-- INNER POD RIB 2 (MID HIGHLIGHT STRIPE) -->
+                                <path d="M 81 44 C 62 70, 52 105, 68 148 C 73 158, 81 160, 83 155 C 70 120, 72 80, 81 44 Z" fill="#8ecfa7" opacity="0.55"></path>
+
+                                <!-- CENTER SEED POD / OPEN SLIT SECTION (CORAZÓN / SEMILLAS DE CACAO) -->
+                                <g id="cacao-seeds">
+                                    <!-- Seed Core Background Oval -->
+                                    <path d="M 82 48 C 76 72, 70 110, 80 152 C 84 140, 92 110, 88 72 Z" fill="url(#seedFillGrad)" stroke="#123d2b" stroke-width="2"></path>
+
+                                    <!-- INDIVIDUAL SEED DETAILS (SEMILLAS INDIVIDUALES) -->
+                                    <!-- Seed 1 -->
+                                    <ellipse cx="80" cy="62" rx="3.5" ry="5.5" transform="rotate(-15 80 62)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                    <!-- Seed 2 -->
+                                    <ellipse cx="78" cy="76" rx="4" ry="6" transform="rotate(-10 78 76)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                    <!-- Seed 3 -->
+                                    <ellipse cx="77" cy="92" rx="4.2" ry="6.5" transform="rotate(-5 77 92)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                    <!-- Seed 4 -->
+                                    <ellipse cx="78" cy="108" rx="4.2" ry="6.5" transform="rotate(5 78 108)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                    <!-- Seed 5 -->
+                                    <ellipse cx="80" cy="124" rx="4" ry="6" transform="rotate(12 80 124)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                    <!-- Seed 6 -->
+                                    <ellipse cx="82" cy="138" rx="3.2" ry="5" transform="rotate(18 82 138)" fill="#e3ecb0" stroke="#123d2b" stroke-width="1.2"></ellipse>
+                                </g>
+
+                                <!-- LIGHT HIGHLIGHT ACCENT ON POD EDGE -->
+                                <path d="M 83 45 C 88 65, 94 95, 88 128" fill="none" stroke="#8ecfa7" stroke-width="2.5" stroke-linecap="round" opacity="0.8"></path>
+                            </g>
+
+                            <!-- ========================================== -->
+                            <!-- RIGHT TEXT: BRAND NAME (Chocolate ANDALUCÍA)-->
+                            <!-- ========================================== -->
+                            <g transform="translate(180, 88)">
+                                <!-- "Chocolate" (Handwritten Script Style) -->
+                                <text id="render-title" class="svg-title-text" x="0" y="0" fill="#123d2b">Chocolate</text>
+
+                                <!-- "ANDALUCÍA" (Bold Sans-serif Tracked Caps) -->
+                                <text id="render-subtitle" class="svg-subtitle-text" x="2" y="42" fill="#123d2b">ANDALUCÍA</text>
+                            </g>
+                        </svg>
