@@ -22,7 +22,10 @@ export const Header = () => {
         {/* <!-- Mobile Menu Button --> */}
         <MenuButton handler={handleOpen} isOpen={isOpen} />
         {/* <!-- CTA Button --> */}
-        <CallToActionButton text="Reservar ahora" />
+        <CallToActionButton
+          text="Reservar ahora"
+          className="hidden lg:inline-flex"
+        />
       </nav>
     </header>
   );
