@@ -1,6 +1,10 @@
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import icono from "../.././../assets/icono.svg";
+import { messageToWhatsaap } from "../../../utils/messageToWhatsaap";
+import { DEFAULT_MESSAGE } from "../../../constants/messageWhatsapp";
+import { LuPhone } from "react-icons/lu";
 export const Footer = () => {
+  const link = messageToWhatsaap(DEFAULT_MESSAGE);
   return (
     <footer id="contacto" className="bg-forest-green py-12 px-4 md:px-8 mt-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -18,8 +22,8 @@ export const Footer = () => {
             <i className="fa-solid fa-location-dot mr-2"></i> Andalucía - Valle
             del Cauca
           </p>
-          <p>
-            <i className="fa-solid fa-phone mr-2"></i> 317 348 7915
+          <p className="flex gap-2 items-center justify-center">
+            <LuPhone /> 317 348 7915
           </p>
         </div>
         {/* <!-- Social Links --> */}
@@ -40,7 +44,7 @@ export const Footer = () => {
           </a>
           <a
             className="w-10 h-10 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-forest-green transition-colors text-white"
-            href="#"
+            href={link}
           >
             <FaWhatsapp />
           </a>
