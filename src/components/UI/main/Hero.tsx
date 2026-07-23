@@ -3,7 +3,7 @@ import andaluz from "../../../assets/carrusel-data/andaluz.webp";
 
 export const Hero = () => {
   return (
-    <section id="#" className="max-w-7xl mx-auto md:mt-10 mb-5">
+    <section className="max-w-7xl mx-auto md:mt-10 mb-5">
       <div className="hero-bg lg:rounded-[2rem] overflow-hidden min-h-[500px] flex items-center  lg:p-16 relative">
         <div className="absolute w-full lg:max-w-full h-full lg:max-h-full lg:mask-l-from-45% lg:mask-l-to-80%  lg:mask-l-from-black  lg:mask-l-to-transparent  brightness-60">
           <img
