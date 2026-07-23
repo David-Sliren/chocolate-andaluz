@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 interface Props {
   text: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 }
 
 const reservations = [
@@ -26,16 +26,12 @@ const reservations = [
     tag: <LuRoute />,
     target: "Ruta del Chocolate Artesanal",
   },
-  //   {
-  //     tag: <LuUtensils />,
-  //     target: "Experiencia gastronómica",
-  //   },
 ];
 
-const ReservationIcon = ({ icon: Icon = null, text }: Props) => {
+const ReservationIcon = ({ icon, text }: Props) => {
   return (
     <li className="flex items-center gap-x-2">
-      <div className="text-forest-green text-3xl">{Icon}</div>
+      <div className="text-forest-green text-3xl">{icon}</div>
       <p className="text-center text-md">{text}</p>
     </li>
   );
