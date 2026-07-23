@@ -40,7 +40,7 @@ const ReservationIcon = ({ icon: Icon = null, text }: Props) => {
     </li>
   );
 };
-export const ReservaionCard = () => {
+export const ReservationCard = () => {
   return (
     <article className="w-full lg:w-1/3 max-w-sm bg-white rounded-3xl p-6 md:p-8 custom-shadow border border-gray-100 mx-auto mt-8 lg:mt-0">
       <ul className="space-y-8 mb-8">

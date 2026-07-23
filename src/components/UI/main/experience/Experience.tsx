@@ -1,4 +1,4 @@
-import { ReservaionCard } from "./ReservaionCard";
+import { ReservationCard } from "./ReservationCard";
 import { Slider } from "./Slider";
 
 export const Experience = () => {
@@ -12,7 +12,7 @@ export const Experience = () => {
       </h2>
       <section className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
         <Slider />
-        <ReservaionCard />
+        <ReservationCard />
       </section>
     </section>
   );
