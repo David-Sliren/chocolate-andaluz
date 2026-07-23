@@ -1,6 +1,7 @@
 import { LuArrowRight } from "react-icons/lu";
 import { cn } from "../../../utils/cn";
 import { messageToWhatsaap } from "../../../utils/messageToWhatsaap";
+import { DEFAULT_MESSAGE } from "../../../constants/messageWhatsapp";
 
 interface Props {
   text: string;
@@ -8,11 +9,7 @@ interface Props {
 }
 
 export const CallToActionButton = ({ text, className = "" }: Props) => {
-  const link = messageToWhatsaap({
-    phoneNumber: "573173487915",
-    message:
-      "¡Hola, encuentro interesante la propuesta, me gustaria reservar un cupo para ir a la pasadia en la finca de chocolate andaluz!.",
-  });
+  const link = messageToWhatsaap(DEFAULT_MESSAGE);
   return (
     <a
       className={cn(
