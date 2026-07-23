@@ -1,30 +1,88 @@
-export const Slider = () => {
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { getAllImages } from "../../../../utils/gobalVite";
+import { useState } from "react";
+import { cn } from "../../../../utils/cn";
+
+interface PropsCardImg {
+  source: string;
+}
+const UrlOfImages = Object.values(getAllImages) as string[];
+
+const CardImg = ({ source }: PropsCardImg) => {
   return (
-    <article className="w-full lg:w-2/3 flex items-center justify-center gap-2 md:gap-4 relative">
-      <button className="bg-mint-green text-forest-green rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0 shadow-md">
-        <i className="fa-solid fa-chevron-left text-sm md:text-base"></i>
-      </button>
-      <div className="flex gap-4 overflow-hidden w-full">
+    <div className="shrink-0 grow-0 px-2 overflow-hidden w-[calc(100%/var(--items))]">
+      <article className="h-[300px] md:h-[450px] rounded-2xl overflow-hidden">
         <img
           alt="Church View"
-          className="w-full md:w-1/2 rounded-2xl object-cover h-[300px] md:h-[450px]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNINy_yba8VojMnPaCY5eS1Ija5yTFR8NM2Qv6JhRd7RodgnquTuiTpj2jzvFx6zdNXggTLx7pMto7rbzQmmmbU7mC3IeeO67QYPOIBTM0HE4UcXVjO-sOV79a87vd4US58p_0N9zREBOWLh9I0uZysJngJ6H2x6RVpQ1i4Fryvz9M2RHALHlHkCkQ_ZEE-5I5fdKX925-VIYr1qbnTH3h3eRijfFCSZOo5wTXRUYG9WF_r3Zx2k8_5A"
+          className="size-full object-cover"
+          src={source}
+          loading="lazy"
         />
-        <img
-          alt="Cacao Pod"
-          className="hidden md:block w-1/2 rounded-2xl object-cover h-[450px]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxBozEQAOehot_kyPQEC51SJ7Ef7RSL4vaGvJRqinAADzLwV_f9pKPZw385cgeH5-T2_fRQA96bpIxAgDZzCxiJBOq2xfOYbf3yXE47AQPY_gqeQ4DeI29e28pMWBcyun1KhntlKsgzaXk1S6rd-lyGHSjagqILW5_jC77_anY0sNSKQUofRPThM5aB7Pp3SZLY5lm174JnlpyLjkUTG8w-E6P4YcnS41cIIDgLPeAnkG85oQJEEL8w"
-        />
-      </div>
-      <button className="bg-mint-green text-forest-green rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0 shadow-md">
-        <i className="fa-solid fa-chevron-right text-sm md:text-base"></i>
+      </article>
+    </div>
+  );
+};
+
+export const Slider = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const maxIndex = Math.max(0, UrlOfImages.length - 1);
+
+  function handleNext() {
+    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
+  }
+
+  function handlePrev() {
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+  }
+
+  function handleMarket(index: number) {
+    setCurrentIndex(index);
+  }
+
+  return (
+    <section className=" w-full lg:w-2/3 flex items-center justify-center gap-2 md:gap-4 relative">
+      <button
+        onClick={handlePrev}
+        className="bg-mint-green text-forest-green rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer"
+      >
+        <LuChevronLeft />
       </button>
+      <section className=" [--items:1] w-full overflow-hidden rounded-2xl">
+        <div
+          className="flex transition-transform duration-500 ease-out -mx-2"
+          style={{
+            transform: `translateX(calc(-${currentIndex} * (100% /var(--items)))`,
+          }}
+        >
+          {UrlOfImages.map((item, i) => (
+            <CardImg key={i} source={item} />
+          ))}
+        </div>
+      </section>
+
+      <button
+        onClick={handleNext}
+        className="bg-mint-green text-forest-green rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer"
+      >
+        <LuChevronRight />
+      </button>
+
       {/* <!-- Dots --> */}
-      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
-        <div className="w-2 h-2 rounded-full bg-forest-green"></div>
-        <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-        <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 cursor-pointer">
+        {UrlOfImages.map((_, id) => (
+          <div
+            key={id}
+            onClick={() => handleMarket(id)}
+            className={cn(
+              "w-2 h-2 rounded-full bg-forest-green/40 transition-all cursor-pointer",
+              {
+                "bg-forest-green w-6": id === currentIndex,
+              },
+            )}
+          />
+        ))}
       </div>
-    </article>
+    </section>
   );
 };
