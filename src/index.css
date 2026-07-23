@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 
 @container scroll-state(stuck: top) {
   .container-nav {

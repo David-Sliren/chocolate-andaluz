@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { motion } from "motion/react";
+
 import {
   LuBusFront,
   LuCamera,
@@ -8,6 +10,7 @@ import {
 } from "react-icons/lu";
 
 interface Props {
+  id: number;
   text: string;
   icon: ReactNode;
 }
@@ -36,12 +39,18 @@ const benefits = [
   },
 ];
 
-const BenefitIcon = ({ icon: Icon = null, text }: Props) => {
+const BenefitIcon = ({ icon: Icon = null, text, id }: Props) => {
   return (
-    <div className="flex flex-col items-center gap-y-2">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      viewport={{ once: true }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ ease: "easeOut", delay: id * 0.06 }}
+      className="flex flex-col items-center gap-y-2"
+    >
       <div className="text-forest-green text-3xl">{Icon}</div>
       <p className="text-center">{text}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -61,7 +70,7 @@ export const Benefit = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 place-items-center">
           {benefits.map((item, i) => (
-            <BenefitIcon key={i} icon={item?.tag} text={item.target} />
+            <BenefitIcon key={i} id={i} icon={item?.tag} text={item.target} />
           ))}
         </div>
       </div>
