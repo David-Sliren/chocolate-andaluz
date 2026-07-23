@@ -8,8 +8,11 @@ export const Hero = () => {
         <div className="absolute w-full lg:max-w-full h-full lg:max-h-full lg:mask-l-from-45% lg:mask-l-to-80%  lg:mask-l-from-black  lg:mask-l-to-transparent  brightness-60">
           <img
             src={andaluz}
-            alt=""
+            alt="imagen de los productos de la empresa chocolate andaluz"
             className="size-full object-cover object-right"
+            fetchPriority="high"
+            decoding="async"
+            loading="eager"
           />
         </div>
         <div className="w-full lg:w-1/2 relative z-10 text-center lg:text-left p-6 text-white lg:text-black">
