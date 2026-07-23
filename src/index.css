@@ -1,14 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-forest-green) white;
-}
-
 @container scroll-state(stuck: top) {
   .container-nav {
-    @apply md:max-w-[60rem] md:rounded-full md:relative md:top-4;
+    @apply md:max-w-[60rem] md:rounded-full md:relative md:top-4 shadow-2xl;
   }
 }
 
