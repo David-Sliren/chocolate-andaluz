@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tailwind-animations";
 
+body {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+:root {
+  @apply scroll-smooth scrollbar-thumb-forest-green scrollbar-thin;
+}
+
 @container scroll-state(stuck: top) {
   .container-nav {
     @apply md:max-w-[60rem] md:rounded-full md:relative md:top-4 shadow-2xl;
